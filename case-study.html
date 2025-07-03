@@ -78,7 +78,7 @@
             const trackingId = params.get('track');
             
             // Tracking-Daten an Make.com senden
-            fetch('https://hook.eu2.make.com/YOUR_TRACKING_WEBHOOK', {
+            fetch('https://hook.eu2.make.com/tqqk16krddne5yti6lr48xqhagh1tl9c', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -93,7 +93,7 @@
             });
             
             // Weiterleitung zu Calendly
-            window.open(`https://calendly.com/alexander/15min?email=${leadEmail}`, '_blank');
+            window.open(`https://calendly.com/alexanderschoenherr6/test=${leadEmail}`, '_blank');
         }
 
         // Page-View Tracking
@@ -103,7 +103,7 @@
             const trackingId = params.get('track');
             
             if (leadEmail && trackingId) {
-                fetch('https://hook.eu2.make.com/YOUR_TRACKING_WEBHOOK', {
+                fetch('https://hook.eu2.make.com/tqqk16krddne5yti6lr48xqhagh1tl9c', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
@@ -117,6 +117,7 @@
                 });
             }
         });
+        // In case-study.html diese Zeile ändern:
     </script>
 </body>
 </html>
