@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <title>Case Study: 300% ROI durch Marketing Automation</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
+        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; border-radius: 10px; text-align: center; }
+        .metric { background: #f8f9fa; padding: 20px; margin: 20px 0; border-radius: 8px; border-left: 4px solid #667eea; }
+        .cta { background: #667eea; color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; display: inline-block; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 Case Study: Fertigungsunternehmen erreicht 300% ROI</h1>
+        <p>Wie TechPro Manufacturing durch Marketing Automation ihre Leads um 400% steigerte</p>
+    </div>
+
+    <h2>Die Ausgangssituation</h2>
+    <p><strong>TechPro Manufacturing</strong> ein mittelständisches Unternehmen mit 250 Mitarbeitern in der Automobilzulieferung - stand vor typischen B2B-Herausforderungen:</p>
+    
+    <div class="metric">
+        <h3>❌ Probleme vor der Automation:</h3>
+        <ul>
+            <li>Manuelle Lead-Qualifizierung kostete 15h/Woche</li>
+            <li>85% der Leads wurden nicht nachverfolgt</li>
+            <li>Sales-Team arbeitete mit unqualifizierten Kontakten</li>
+            <li>Conversion-Rate: nur 2.3%</li>
+        </ul>
+    </div>
+
+    <h2>Die Lösung: TechMarketing AI Suite</h2>
+    <p>Nach einer ausführlichen Analyse implementierten wir unsere Marketing-Automation-Suite:</p>
+
+    <div class="metric">
+        <h3>🔧 Implementierte Module:</h3>
+        <ul>
+            <li><strong>KI-Lead-Scoring:</strong> Automatische Bewertung aller eingehenden Leads</li>
+            <li><strong>Content-Generator:</strong> Personalisierte E-Mails für jeden Lead-Typ</li>
+            <li><strong>Multi-Channel-Automation:</strong> LinkedIn, E-Mail, HubSpot Integration</li>
+            <li><strong>Performance-Tracking:</strong> Real-time Dashboard für alle Metriken</li>
+        </ul>
+    </div>
+
+    <h2>Die Ergebnisse nach 8 Monaten</h2>
+    
+    <div class="metric">
+        <h3>📈 Messbare Erfolge:</h3>
+        <ul>
+            <li><strong>Lead-Qualität:</strong> +240% qualifizierte Leads</li>
+            <li><strong>Conversion-Rate:</strong> Von 2.3% auf 8.7% (+278%)</li>
+            <li><strong>Sales-Effizienz:</strong> 60% weniger Zeit für Lead-Bearbeitung</li>
+            <li><strong>Revenue-Impact:</strong> +1.2 Mio € zusätzlicher Umsatz</li>
+            <li><strong>ROI:</strong> 300% Return on Investment</li>
+        </ul>
+    </div>
+
+    <div class="metric">
+        <h3>💬 Testimonial:</h3>
+        <p><em>"Die Marketing-Automation hat unser Business transformiert. Wir sparen 15 Stunden pro Woche und haben dreimal mehr qualifizierte Leads. Die Investition hat sich bereits nach 4 Monaten amortisiert."</em></p>
+        <p><strong>- Michael Weber, Geschäftsführer TechPro Manufacturing</strong></p>
+    </div>
+
+    <h2>Ihre nächsten Schritte</h2>
+    <p>Ähnliche Ergebnisse sind auch für Ihr Unternehmen möglich. Starten Sie mit einer kostenlosen Potenzial-Analyse:</p>
+
+    <center>
+        <a href="#" class="cta" onclick="trackClick('demo_request')" id="demo-btn">
+            🚀 Kostenlose 15-Min Analyse buchen
+        </a>
+    </center>
+
+    <script>
+        // Link-Tracking System
+        function trackClick(action) {
+            const params = new URLSearchParams(window.location.search);
+            const leadEmail = params.get('lead');
+            const trackingId = params.get('track');
+            
+            // Tracking-Daten an Make.com senden
+            fetch('https://hook.eu2.make.com/YOUR_TRACKING_WEBHOOK', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    event: 'link_clicked',
+                    action: action,
+                    lead_email: leadEmail,
+                    tracking_id: trackingId,
+                    page: 'case_study',
+                    timestamp: new Date().toISOString(),
+                    user_agent: navigator.userAgent
+                })
+            });
+            
+            // Weiterleitung zu Calendly
+            window.open(`https://calendly.com/alexander/15min?email=${leadEmail}`, '_blank');
+        }
+
+        // Page-View Tracking
+        window.addEventListener('load', function() {
+            const params = new URLSearchParams(window.location.search);
+            const leadEmail = params.get('lead');
+            const trackingId = params.get('track');
+            
+            if (leadEmail && trackingId) {
+                fetch('https://hook.eu2.make.com/YOUR_TRACKING_WEBHOOK', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        event: 'page_viewed',
+                        page: 'case_study',
+                        lead_email: leadEmail,
+                        tracking_id: trackingId,
+                        timestamp: new Date().toISOString(),
+                        time_on_page_start: Date.now()
+                    })
+                });
+            }
+        });
+    </script>
+</body>
+</html>
